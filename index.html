@@ -1,11 +1,31 @@
+<!doctype html>
 <html>
-<body>
-<desmond-player id="player"></desmond-player>
-<script src="desmond.min.js"></script>
-<script>
-window.onload = function(){
-document.getElementById("player").loadURL("firmware.nds");
-}
-</script>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <link rel="manifest" href="manifest.json">
+    <title>Desmond - Firmware Demo</title>
+</head>
+
+<body style="background: black;">
+    <desmond-player></desmond-player>
+    <script src="desmond.min.js"></script>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector("desmond-player").loadURL("DSCDP_CRUJN6_00.nds")
+                document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+
+                document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+            }, 1000)
+        }
+    </script>
 </body>
+
+
+</html>
+</body>
+
 </html>
